@@ -1,0 +1,65 @@
+body{
+    background-color: black;
+
+}
+.parent{
+    left: 400px;
+    top: 150px;
+    height: 300px;
+    width: 500px;
+    position: relative;
+    border: 2px solid red;
+    overflow: hidden;
+
+}
+.parent>img{
+    width: inherit;
+    height: inherit;
+    background-size: cover;
+    transition: all 1s linear 4s;
+}
+.parent:hover>img
+{
+    transform: scale(2,2);
+}
+.parent>#curtain
+{
+    margin-top: -304px;
+    background: red;
+    width: inherit;
+    height: inherit;
+    transition: all 3s linear 1s;
+}
+.parent:hover>#curtain
+{
+    transform: translateY(-100%);
+}
+
+#leftdoor{
+    background: linear-gradient(orange,blue,green);
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-right: 1px solid black;
+    transition: 2s;
+    transform-origin: left;
+}
+#rightdoor{
+    background: linear-gradient(orange,blue,green);
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    left: 250px;
+    border-left: 1px solid black;
+    transition: 2s;
+    transform-origin: right;
+}
+.parent:hover>#leftdoor{
+    transform: perspective(200px) rotateY(90deg);
+}
+.parent:hover>#rightdoor{
+    transform: perspective(200px) rotateY(-90deg);
+}
